@@ -1,0 +1,9 @@
+{% extends 'incidents/base.html' %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <input class="form-control mb-2" name="short_desc" placeholder="Short Description">
+  <textarea class="form-control mb-2" name="description"></textarea>
+  <button class="btn btn-primary">Create Incident</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "incidents/base.html" %}
+{% block content %}
+<h4>Update Incident State</h4>
+
+<form method="post">
+  {% csrf_token %}
+  <select name="state" class="form-select">
+    {% for i, s in states %}
+      <option value="{{ i }}" {% if i == current_state %}selected{% endif %}>
+        {{ s }}
+      </option>
+    {% endfor %}
+  </select>
+
+  <button class="btn btn-success">Update</button>
+</form>
+{% endblock %}

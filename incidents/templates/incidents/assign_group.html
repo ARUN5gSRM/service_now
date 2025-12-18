@@ -1,0 +1,12 @@
+{% extends "incidents/base.html" %}
+{% block content %}
+<h4>Assign Incident to Group</h4>
+
+<form method="post">
+  {% csrf_token %}
+  <input class="form-control mb-2"
+         name="group"
+         placeholder="Group name (e.g. Service Desk)">
+  <button class="btn btn-secondary">Assign</button>
+</form>
+{% endblock %}

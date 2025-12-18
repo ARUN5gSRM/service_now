@@ -1,0 +1,23 @@
+{% extends 'incidents/base.html' %}
+{% block content %}
+<table class="table table-bordered">
+<tr>
+  <th>Number</th>
+  <th>Short_Description</th>
+  <th>Actions</th>
+</tr>
+{% for t in tickets %}
+<tr>
+  <td>{{ t.number }}</td>
+  <td>{{ t.short_description }}</td>
+  <td>
+  <a href="{% url 'update' t.sys_id %}" class="btn btn-warning btn-sm">Update</a>
+  <a href="{% url 'assign_user' t.sys_id %}" class="btn btn-info btn-sm">User</a>
+  <a href="{% url 'assign_group' t.sys_id %}" class="btn btn-secondary btn-sm">Group</a>
+  <a href="{% url 'delete' t.sys_id %}" class="btn btn-danger btn-sm">Delete</a>
+  </td>
+  <td>{{ t.sys_created_on }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
