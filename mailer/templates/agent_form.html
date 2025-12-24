@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agent Action Form</title>
+</head>
+<body>
+    <h2>Agent Action Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>User Email:</label><br>
+        <input type="email" name="user_email" required><br><br>
+
+        <label>Agent Name:</label><br>
+        <input type="text" name="agent_name" required><br><br>
+
+        <label>Status:</label><br>
+        <select name="status">
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Escalated">Escalated</option>
+        </select><br><br>
+
+        <label>Comment:</label><br>
+        <textarea name="comment"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
